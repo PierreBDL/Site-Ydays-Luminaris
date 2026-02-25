@@ -14,7 +14,7 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: var(--bg);
-    color: var(--text);
+    color: white !important;
 }
 
 main {
@@ -28,7 +28,7 @@ main {
     font-size: 2.3rem;
     margin-bottom: 40px;
     font-weight: 600;
-    color: var(--primary);
+    color: white;
 }
 
 /* Timeline container */
@@ -116,11 +116,11 @@ main {
 .friseContent h3 {
     margin: 45px 0 2px 0px;
     font-weight: 600;
-    color: var(--primary);
+    color: white;
 }
 
 .friseContent p {
-    color: var(--muted);
+    color: white;
     margin-bottom: 2px;
 }
 
@@ -148,8 +148,8 @@ main {
     padding: 8px 18px;
     border-radius: 30px;
     border: none;
-    background: var(--primary);
-    color: white;
+    background: white;
+    color: var(--primary);
     cursor: pointer;
     transition: 0.3s;
     font-size: 0.85rem;
@@ -158,7 +158,8 @@ main {
 }
 
 .btnVoirPlus:hover {
-    background: black;
+    background: rgb(144, 144, 144);
+    color: rgb(244, 244, 244);
 }
 
 /* Section Plus Infos */

@@ -1,0 +1,93 @@
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: white;
+}
+
+#equipe-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#equipe-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.chef {
+    display: flex;
+    justify-self: center;
+}
+
+.couronne {
+    aspect-ratio: 1/1;
+    max-width: 40px;
+}
+
+.role-title {
+    font-size: 1.8rem;
+    color: var(--primary);
+    border-left: 5px solid var(--accent);
+    padding-left: 15px;
+    margin: 40px 0 20px 0;
+}
+
+/* Grille Responsive */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Style des Cartes */
+.member-card {
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.member-card:hover {
+    transform: translateY(-10px);
+}
+
+.member-img {
+    width: 100px;
+    height: 100px;
+    background: #e2e8f0; /* Couleur d'attente avant image */
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    background-image: url('../Images/avatar-default.png'); /* Optionnel */
+    background-size: cover;
+}
+
+.member-card h4 {
+    margin: 10px 0 5px 0;
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+.member-card p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Responsive Tablette/Mobile */
+@media (max-width: 600px) {
+    .team-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+    
+    #equipe-header h2 {
+        font-size: 2rem;
+    }
+}

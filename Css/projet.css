@@ -1,44 +1,89 @@
+/* --- Mise en page globale --- */
 main {
-    padding: 20px;
-    max-width: 90vw;
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .title {
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 40px;
+    font-weight: 600;
 }
 
-#textContent div h3 {
-    margin-bottom: 10px;
+/* --- Sections de contenu --- */
+#textContent {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-#textContent div p {
-    margin-bottom: 20px;
+.project-section {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 6px solid var(--accent); /* Rappel de la DA */
+    color: black;
 }
 
+.project-section h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    color: var(--primary);
+}
+
+.project-section p {
+    line-height: 1.6;
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+/* --- Bouton et Flexbox --- */
 .TexteBouton {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: start;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 15px;
 }
 
-.TexteBouton a {
-    text-decoration: none;
-}
-
-.TexteBouton a button {
-    padding: 1vh 1vw 1vh 1vw;
-    font-size: 12px;
+.btnProjet {
+    padding: 12px 24px;
+    background-color: var(--accent);
+    color: black !important; 
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
     cursor: pointer;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
 }
 
-.TexteBouton a button:hover {
-    background-color: #688B58;
-    color: white;
+.btnProjet:hover {
+    background-color: var(--primary);
+    color: black !important;
+    transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .TexteBouton {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-section {
+        padding: 20px;
+    }
 }
