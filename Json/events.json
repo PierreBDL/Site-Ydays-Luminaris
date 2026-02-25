@@ -90,11 +90,11 @@
         { "text": "Double saut", "status": "enCours" },
         { "text": "Site web de suivi de projet", "status": "enCours" }
       ],
-      "description": "Description de l'événement 5.",
       "images": [
-        "/140126/Image1.png",
-        "/140126/Image2.png",
-        "/140126/Image3.png"
+        "/150126/Image1.png",
+        "/150126/Image2.png",
+        "/150126/Image3.png",
+        "/150126/Image4.png"
       ]
     },
 
@@ -105,9 +105,10 @@
       "tasks": [],
       "description": "Description de l'événement 6.",
       "images": [
-        "/140126/Image1.png",
-        "/140126/Image2.png",
-        "/140126/Image3.png"
+        "/150126/Image1.png",
+        "/150126/Image2.png",
+        "/150126/Image3.png",
+        "/150126/Image4.png"
       ]
     },
 

@@ -1,321 +1,399 @@
-/* Main */
+:root {
+    --bg: #f4f6f8;
+    --primary: #1e293b;
+    --accent: #3b82f6;
+    --accent-light: #60a5fa;
+    --text: #0f172a;
+    --muted: #64748b;
+    --card: #ffffff;
+}
+
+/* Base */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
 
 main {
-    padding: 20px;
-    max-width: 90vw;
+    padding: 60px 40px;
+    max-width: 1400px;
+    margin: auto;
 }
 
 #title {
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 2.3rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: var(--primary);
 }
 
+/* Timeline container */
+
 #friseContainer {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
+    overflow-x: auto;
+    padding-bottom: 40px;
 }
 
 #friseChronologique {
     display: flex;
-    flex-direction: row;
+    min-width: max-content;
+    position: relative;
 }
 
-#friseChronologique .friseItem {
-    position: relative;
+/* Chaque bloc */
+
+.friseItem {
     display: flex;
     flex-direction: column;
-    width: 8.5vw;
-    margin: 0;
-    padding: 0;
-    transition: transform 0.3s;
-    display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
+    align-items: center;
+    width: 220px;
 }
 
-#friseChronologique .friseItem:hover {
-    transform: translateY(-5px);
+/* Trait */
+.trait::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
 }
 
-#friseChronologique .friseItem .friseContent h3 {
-    white-space: nowrap;
+.trait {
+    margin-top: 35px;
+    height: 70px;
+    width: 5px;
+    background-color: var(--primary);
+    display: flex;
+    z-index: 5;
+    position: absolute;
 }
 
-#friseChronologique .friseItem .friseBloc {
-    height: 7vh;
+/* RECTANGLE PRINCIPAL */
+
+.friseBloc {
     width: 100%;
+    height: 70px;
+    border: var(--primary) 2px solid;
 }
 
-.friseContent p, .friseContent h3 {
-    text-align: center;
-}
+/* Alternance moderne */
 
-/* Bloc 1 */
-.friseBloc1 .friseBloc {
-    background-color: #464655;
-}
-
-.friseBloc1 .friseContent p, .friseBloc1 .friseContent h3 {
-    color: #464655;
-}
-
-/* Bloc 2 */
-.friseBloc2 .friseBloc {
-    background-color: #688B58;
-}
-
-.friseBloc2 .friseContent p, .friseBloc2 .friseContent h3 {
-    color: #688B58;
-}
-
-/* Bloc 3 */
-.friseBloc3 .friseBloc {
-    background-color: #464655;
-}
-
-.friseBloc3 .friseContent p, .friseBloc3 .friseContent h3 {
-    color: #464655;
-}
-
-/* Bloc 4 */
-.friseBloc4 .friseBloc {
-    background-color: #688B58;
-}
-
-.friseBloc4  .friseContent p, .friseBloc4 .friseContent h3 {
-    color: #688B58;
-}
-
-/* Bloc 5 */
-.friseBloc5 .friseBloc {
-    background-color: #464655;
-}
-
-.friseBloc5  .friseContent p, .friseBloc5 .friseContent h3 {
-    color: #464655;
-}
-
-/* Bloc 6 */
-.friseBloc6 .friseBloc {
-    background-color: #688B58;
-}
-
-.friseBloc6  .friseContent p, .friseBloc6 .friseContent h3 {
-    color: #688B58;
-}
-
-/* Bloc 7 */
-.friseBloc7 .friseBloc {
-    background-color: #464655;
-}
-
-.friseBloc7  .friseContent p, .friseBloc7 .friseContent h3 {
-    color: #464655;
-}
-
-/* Bloc 8 */
-.friseBloc8 .friseBloc {
-    background-color: #688B58;
-}
-
-.friseBloc8  .friseContent p, .friseBloc8 .friseContent h3 {
-    color: #688B58;
-}
-
-/* Bloc 9 */
-.friseBloc9 .friseBloc {
-    background-color: #464655;
-}
-
-.friseBloc9  .friseContent p, .friseBloc9 .friseContent h3 {
-    color: #464655;
-}
-
-/* Bloc 10 */
-.friseBloc10 .friseBloc {
-    background-color: #688B58;
-}
-
-.friseBloc10  .friseContent p, .friseBloc10 .friseContent h3 {
-    color: #688B58;
-}
-
-/* Bloc 11 */
+.friseBloc2 .friseBloc,
+.friseBloc4 .friseBloc,
+.friseBloc6 .friseBloc,
+.friseBloc8 .friseBloc,
+.friseBloc10 .friseBloc,
+.friseBloc1 .friseBloc,
+.friseBloc3 .friseBloc,
+.friseBloc5 .friseBloc,
+.friseBloc7 .friseBloc,
+.friseBloc9 .friseBloc,
 .friseBloc11 .friseBloc {
-    background-color: #464655;
+    background: var(--accent);
 }
 
-.friseBloc11  .friseContent p, .friseBloc11 .friseContent h3 {
-    color: #464655;
-}
+/* Contenu sous les rectangles */
 
-.friseBloc11 {
+.friseContent {
+    padding: 10px 15px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    row-gap: 2px;
+    height: 100%;
     position: relative;
+    z-index: 10;
 }
 
-.arrowBase {
-    position: absolute;
-    top: -1.7vh;
-    right: 0px;
-    width: 6px;
-    height: 11vh;
-    background: #688B58;
+.friseContent h3 {
+    margin: 45px 0 2px 0px;
+    font-weight: 600;
+    color: var(--primary);
 }
 
-.friseBloc11 .arrow {
-    position: absolute;
-    top: 0.5vh;
-    right: -30px;
-    width: 0vh;
-    height: 6px;
-    background: #688B58;
+.friseContent p {
+    color: var(--muted);
+    margin-bottom: 2px;
 }
 
-.friseBloc11 .arrow::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: -7px;
-    width: 7vh;
-    height: 7vh;
-    border-right: 6px solid #688B58;
-    border-bottom: 6px solid #688B58;
-    transform: rotate(-45deg);
-}
-
-/* Btn Voir Plus */
+/* Bouton moderne */
 
 .btnVoirPlus {
-    display: block;
-    margin: auto;
-    padding: 4% 5% 4% 5%;
+    padding: 8px 18px 8px 18px;
+    border-radius: 30px;
     border: none;
-    border-radius: 5px;
-    background-color: black;
+    background: var(--primary);
     color: white;
+    font-size: 0.85rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s;
+    align-self: end;
 }
 
 .btnVoirPlus:hover {
-    background-color: white;
-    color: black;
-    border: 2px solid black;
+    background: var(--accent);
+}
+
+/* Bouton */
+
+.btnVoirPlus {
+    padding: 8px 18px;
+    border-radius: 30px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.85rem;
+    max-width: 100%;
+    justify-self: center;
+}
+
+.btnVoirPlus:hover {
+    background: black;
 }
 
 /* Section Plus Infos */
 
 #PlusInfos {
     display: none;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 3%;
-    margin: 3%;
-    left: 50%;
-    transform: translateX(-50%);
-    position: relative;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 80px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
 #PlusInfos.visible {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
 #PlusInfos h2 {
-    text-align: center;
+    margin-top: 0;
 }
 
 #PlusInfos p {
+    max-width: 800px;
     text-align: justify;
-    margin-bottom: 3%;
 }
 
-#PlusInfos p p {
-    margin: 0;
+/* Couleur statut tâches */ 
+
+.termine { 
+    color: green; 
+} 
+
+.enCours { 
+    color: orange; 
+} 
+
+.pasCommence { 
+    color: red; 
 }
 
-/* Couleur statut tâches */
-.termine {
-    color: green;
-}
-
-.enCours {
-    color: orange;
-}
-
-.pasCommence {
-    color: red;
-}
-
-#PlusInfos #closeButton {
-    display: block;
-    margin: auto;
-    padding: 1% 2% 1% 2%;
-    border: none;
-    border-radius: 5px;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#PlusInfos #closeButton:hover {
-    background-color: white;
-    color: black;
-    border: 2px solid black;
-}
-
-/* Carrousel Images */
+/* Carrousel */
 
 #imagesContainer {
     display: grid;
-    grid-template-columns: 1fr 9fr 1fr;
+    grid-template-columns: 60px 1fr 60px;
     align-items: center;
+    gap: 20px;
     width: 100%;
+    margin-top: 30px;
 }
 
 #carrouselViewport {
     overflow: hidden;
     width: 100%;
+    border-radius: 16px;
 }
 
 #carrousel {
     display: flex;
-    margin-bottom: 3%;
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease;
 }
 
 .ImageVoirPlus {
     min-width: 100%;
-    height: auto;
     aspect-ratio: 16/9;
-    max-width: 80%;
-    height: auto;
+    object-fit: cover;
 }
 
 .prev, .next {
     cursor: pointer;
-    text-align: center;
-    max-height: 5vh;
-    max-width: 7vw;
-    padding: 1vw 1vh 1vw 1vh;
-    margin: auto;
-    align-self: center;
-    color: black;
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 10px;
-    user-select: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
 }
 
 .prev:hover, .next:hover {
-    background-color: black;
+    background: black;
+}
+
+/* Bouton fermer */
+
+#closeButton {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    background: var(--primary);
     color: white;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVE TABLETTE & MOBILE --- */
+
+@media (max-width: 1024px) {
+    main {
+        padding: 40px 20px;
+    }
+
+    /* On casse le mode horizontal pour passer en vertical */
+    #friseChronologique {
+        flex-direction: column;
+        align-items: flex-start; /* Aligné à gauche */
+        padding-left: 50px;     /* Espace pour le trait vertical */
+        min-width: auto;
+    }
+
+    .friseItem {
+        width: 100%;
+        flex-direction: row;    /* Rectangle à gauche, texte à droite */
+        align-items: flex-start;
+        margin-bottom: 40px;
+        gap: 20px;
+    }
+
+    /* On transforme le rectangle bleu en petit carré/indicateur */
+    .friseBloc {
+        width: 60px;
+        min-width: 60px;
+        height: 60px;
+    }
+
+    /* Le trait devient vertical et se place à gauche */
+    .trait {
+        position: absolute;
+        left: 28px; /* Centré sous le carré de 60px */
+        top: 60px;
+        height: calc(100% - 20px);
+        width: 4px;
+        margin-top: 0;
+    }
+
+    /* On ajuste le contenu textuel */
+    .friseContent {
+        text-align: left;
+        padding: 0;
+    }
+
+    .friseContent h3 {
+        margin: 0 0 5px 0;
+    }
+
+    .btnVoirPlus {
+        justify-self: start;
+        margin-top: 10px;
+    }
+
+    /* Suppression de la flèche finale en mode mobile car elle ne fait plus sens */
+    .last-rect::after {
+        display: none;
+    }
+
+    /* On réduit l'espace autour du carrousel */
+    #PlusInfos {
+        padding: 20px;
+    }
+
+    #imagesContainer {
+        grid-template-columns: 45px 1fr 45px; /* Flèches légèrement plus petites */
+        gap: 10px;
+    }
+
+    .prev, .next {
+        height: 45px;
+        width: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    #title {
+        font-size: 1.8rem;
+    }
+
+    #friseChronologique {
+        padding-left: 30px;
+    }
+
+    .friseItem {
+        gap: 15px;
+    }
+
+    .friseBloc {
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+    }
+
+    .trait {
+        left: 18px;
+        top: 40px;
+    }
+
+    /* Sur petit mobile, on place souvent les flèches SUR l'image ou en dessous */
+    #imagesContainer {
+        display: block; /* On casse la grille */
+        position: relative;
+    }
+
+    #carrouselViewport {
+        width: 100%;
+    }
+
+    /* On positionne les flèches en flottant sur les côtés de l'image */
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 20;
+        height: 40px;
+        width: 40px;
+        background: rgba(30, 41, 59, 0.7); /* var(--primary) avec transparence */
+        font-size: 20px;
+        border-radius: 50%; /* Boutons ronds sur mobile */
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+    
+    /* On s'assure que les images gardent un bon ratio */
+    .ImageVoirPlus {
+        aspect-ratio: 4/3; /* Plus haut sur mobile pour mieux voir */
+    }
 }
