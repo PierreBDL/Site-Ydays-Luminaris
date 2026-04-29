@@ -106,7 +106,7 @@ function closeInfos() {
 let eventsData = [];
 
 async function loadEvents() {
-    const response = await fetch("Json/events.json"); 
+    const response = await fetch("../Json/events.json"); 
     const data = await response.json();
     eventsData = data.events;
 }
