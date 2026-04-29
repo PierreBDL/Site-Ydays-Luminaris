@@ -1,6 +1,4 @@
-const VoirPlusBtn = document.getElementById("VoirPlusBtn");
 const imagesContainer = document.getElementById("carrousel");
-const images =  document.querySelectorAll(".ImageVoirPlus");
 const nextBtn = document.querySelector(".next");
 const prevBtn = document.querySelector(".prev");
 
@@ -11,11 +9,17 @@ function UpdateCarrousel() {
 }
 
 nextBtn.addEventListener("click", () => {
-    index = (index + 1) % images.length;
-    UpdateCarrousel();
+    const images = document.querySelectorAll(".ImageVoirPlus");
+    if (images.length > 0) {
+        index = (index + 1) % images.length;
+        UpdateCarrousel();
+    }
 });
 
 prevBtn.addEventListener("click", () => {
-    index = (index - 1 + images.length) % images.length;
-    UpdateCarrousel();
+    const images = document.querySelectorAll(".ImageVoirPlus");
+    if (images.length > 0) {
+        index = (index - 1 + images.length) % images.length;
+        UpdateCarrousel();
+    }
 });
