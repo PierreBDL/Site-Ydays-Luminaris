@@ -72,6 +72,20 @@ main {
     transform: translateY(-2px);
 }
 
+/* --- Listes --- */
+.project-section ul {
+    list-style: disc;
+    padding-left: 40px;
+    margin: 15px 0;
+}
+
+.project-section li {
+    margin: 8px 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
     .title {

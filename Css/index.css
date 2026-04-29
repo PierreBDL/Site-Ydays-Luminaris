@@ -171,6 +171,7 @@ main {
     padding: 40px;
     margin-top: 80px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    color: black;
 }
 
 #PlusInfos.visible {
@@ -181,11 +182,20 @@ main {
 
 #PlusInfos h2 {
     margin-top: 0;
+    color: var(--primary);
 }
 
 #PlusInfos p {
     max-width: 800px;
     text-align: justify;
+    color: var(--text);
+}
+
+#descriptionContainer {
+    max-width: 800px;
+    text-align: justify;
+    color: var(--text);
+    width: 100%;
 }
 
 /* Couleur statut tâches */ 
