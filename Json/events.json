@@ -4,6 +4,7 @@
       "id": "event1",
       "date": "29/10/25",
       "title": "Séance du 29/10/25 - Lancement du projet",
+      "description": "Lancement du projet, création du dépôt GitHub, mise en place du projet Unity, mise en place du lore du jeu et des premières idées, création du Trello du projet, recrutement des derniers membres de l'équipe et première ébauche du planning.",
       "tasks": [
         { "text": "Création du dépôt GitHub", "status": "termine" },
         { "text": "Mise en place du projet Unity", "status": "termine" },
@@ -24,6 +25,7 @@
       "id": "event2",
       "date": "19/11/25",
       "title": "Séance du 19/11/25 - Première maquette du jeu",
+      "description": "Création d'une première maquette du jeu avec les déplacements de base, premiers concepts d'environnement et de personnages, rétroplannings des équipes et délégation des leads développeur et créatif.",
       "tasks": [
         { "text": "Création des déplacements de base", "status": "termine" },
         { "text": "Premiers concepts d'environnement et de personnages", "status": "termine" },
@@ -41,6 +43,7 @@
       "id": "event3",
       "date": "10/12/25",
       "title": "Séance du 10/12/2025 - Avancées sur les mécaniques de jeu",
+      "description": "Avancées sur les mécaniques de jeu, création des préfabs et premières animations.",
       "tasks": [
         { "text": "Menu principal", "status": "termine" },
         { "text": "Ennemis", "status": "termine" },
@@ -63,6 +66,7 @@
       "id": "event4",
       "date": "14/01/26",
       "title": "Séance du 14/01/26 - Retravail sur la carte et les mécaniques",
+      "description": "Retravail sur la carte du jeu et les mécaniques de base, début de l'implémentation du menu des paramètres.",
       "tasks": [
         { "text": "Menu des paramètres", "status": "termine" },
         { "text": "Revoir la carte du jeu", "status": "termine" },
@@ -83,7 +87,8 @@
     {
       "id": "event5",
       "date": "15/01/26",
-      "title": "Séance du 15/01/26",
+      "title": "Séance du 15/01/26 - Progression sur les mécaniques de jeu",
+      "description": "Progression sur les mécaniques de jeu et optimisations diverses.",
       "tasks": [
         { "text": "Changement de niveau", "status": "termine" },
         { "text": "Système de sauvegarde", "status": "enCours" },
@@ -100,54 +105,75 @@
 
     {
       "id": "event6",
-      "date": "xx/xx/xxxx",
-      "title": "Sixième séance",
-      "tasks": [],
-      "description": "Description de l'événement 6.",
+      "date": "25/02/26",
+      "title": "Séance du 25/02/26 - Progression mécanique et optimisations",
+      "description": "Progression sur les mécaniques de jeu et optimisations diverses.",
+      "tasks": [
+        { "text": "Système de sauvegarde", "status": "termine" },
+        { "text": "Double saut", "status": "termine" },
+        { "text": "Site web de suivi de projet", "status": "enCours" },
+        { "text": "Corrections des bugs scène", "status": "enCours" }
+      ],
       "images": [
-        "/150126/Image1.png",
-        "/150126/Image2.png",
-        "/150126/Image3.png",
-        "/150126/Image4.png"
+        "/250226/image1.png",
+        "/250226/image2.png",
+        "/250226/image3.png"
       ]
     },
 
     {
       "id": "event7",
-      "date": "xx/xx/xxxx",
-      "title": "Septième séance",
-      "tasks": [],
-      "description": "Description de l'événement 7.",
+      "date": "18/03/26",
+      "title": "Séance du 18/03/26 - Raffinements et corrections",
+      "description": "Raffinements et corrections diverses sur le projet.",
+      "tasks": [
+        { "text": "Fusion du menu et des paramètres avec le projet", "status": "termine" },
+        { "text": "Optimisation des mécaniques de jeu", "status": "termine" },
+        { "text": "Préfab joueur avec caméra", "status": "termine" },
+        { "text": "Corrections divers bugs", "status": "enCours" }
+      ],
       "images": [
-        "/140126/Image1.png",
-        "/140126/Image2.png",
-        "/140126/Image3.png"
+        "/180326/image1.png",
+        "/180326/image2.png",
+        "/180326/image3.png"
       ]
     },
 
     {
       "id": "event8",
-      "date": "xx/xx/xxxx",
-      "title": "Huitième séance",
-      "tasks": [],
-      "description": "Description de l'événement 8.",
+      "date": "08/04/26",
+      "title": "Séance du 08/04/26 - Fusions",
+      "tasks": [
+        { "text": "Fusion du projet avec les différentes branches de développement", "status": "termine" },
+        { "text": "Zone de boss", "status": "termine" },
+        { "text": "Corrections de bugs de chargement de zones", "status": "termine" },
+        { "text": "Corrections de bugs", "status": "enCours" }
+      ],
+      "description": "Fusion du projet avec les différentes branches de développement, corrections de bugs et optimisations diverses.",
       "images": [
-        "/140126/Image1.png",
-        "/140126/Image2.png",
-        "/140126/Image3.png"
+        "/080426/image1.png",
+        "/080426/image2.png",
+        "/080426/image3.png",
+        "/080426/image4.png"
       ]
     },
 
     {
       "id": "event9",
-      "date": "xx/xx/xxxx",
-      "title": "Neuvième séance",
-      "tasks": [],
-      "description": "Description de l'événement 9.",
+      "date": "29/05/26",
+      "title": "Séance du 29/05/26 - Musique et son & Animations",
+      "tasks": [   
+        { "text": "Musique et son menu", "status": "termine" },
+        { "text": "Musique et son en jeu", "status": "termine" },
+        { "text": "Corrections de bugs", "status": "enCours" },
+        { "text": "Animations de base (idle, movement)", "status": "enCours" },
+        { "text": "Animations de mort", "status": "pasCommence" }
+      ],
+      "description": "Ajout de musique et de son pour le menu et le jeu, animations de base et de mort, corrections de bugs et optimisations diverses.",
       "images": [
-        "/140126/Image1.png",
-        "/140126/Image2.png",
-        "/140126/Image3.png"
+          "/290426/video1.mp4",
+          "/290426/video2.mp4",
+          "/290426/image3.png"
       ]
     },
 
@@ -157,11 +183,7 @@
       "title": "Dixième séance",
       "tasks": [],
       "description": "Description de l'événement 10.",
-      "images": [
-        "/140126/Image1.png",
-        "/140126/Image2.png",
-        "/140126/Image3.png"
-      ]
+      "images": []
     },
 
     {
@@ -170,11 +192,7 @@
       "title": "Onzième séance",
       "tasks": [],
       "description": "Description de l'événement 11.",
-      "images": [
-        "/140126/Image1.png",
-        "/140126/Image2.png",
-        "/140126/Image3.png"
-      ]
+      "images": []
     }
   ]
 }
