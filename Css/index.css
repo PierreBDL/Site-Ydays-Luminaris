@@ -14,12 +14,12 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background: var(--bg);
-    color: white !important;
+    color: black !important;
 }
 
 main {
-    padding: 60px 40px;
-    max-width: 1400px;
+    padding: 60px 0 60px 0;
+    max-width: 100%;
     margin: auto;
 }
 
@@ -28,23 +28,48 @@ main {
     font-size: 2.3rem;
     margin-bottom: 40px;
     font-weight: 600;
-    color: white;
+    color: black;
+    padding: 0 40px;
 }
 
-/* Timeline container */
 
 #friseContainer {
     overflow-x: auto;
-    padding-bottom: 40px;
+    overflow-y: visible;
+    width: 100%;
+    padding-bottom: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#friseContainer::-webkit-scrollbar {
+    height: 6px;
+}
+
+#friseContainer::-webkit-scrollbar-thumb {
+    background-color: rgba(30, 41, 59, 0.35);
+    border-radius: 99px;
+}
+
+#friseContainer::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(30, 41, 59, 0.6);
+}
+
+#friseContainer::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.06);
+    border-radius: 99px;
+    margin: 0 40px;
 }
 
 #friseChronologique {
     display: flex;
     min-width: max-content;
     position: relative;
+    gap: 5px;
+    padding: 0 40px;
 }
 
-/* Chaque bloc */
 
 .friseItem {
     display: flex;
@@ -53,7 +78,6 @@ main {
     width: 220px;
 }
 
-/* Trait */
 .trait::before {
     content: "";
     position: absolute;
@@ -76,15 +100,12 @@ main {
     position: absolute;
 }
 
-/* RECTANGLE PRINCIPAL */
-
 .friseBloc {
     width: 100%;
     height: 70px;
     border: var(--primary) 2px solid;
+    border-radius: 10px;
 }
-
-/* Alternance moderne */
 
 .friseBloc2 .friseBloc,
 .friseBloc4 .friseBloc,
@@ -100,7 +121,7 @@ main {
     background: var(--accent);
 }
 
-/* Contenu sous les rectangles */
+/* Rectangles */
 
 .friseContent {
     padding: 10px 15px;
@@ -116,73 +137,124 @@ main {
 .friseContent h3 {
     margin: 45px 0 2px 0px;
     font-weight: 600;
-    color: white;
+    color: black;
 }
 
 .friseContent p {
-    color: white;
+    color: black;
     margin-bottom: 2px;
 }
-
-/* Bouton moderne */
-
-.btnVoirPlus {
-    padding: 8px 18px 8px 18px;
-    border-radius: 30px;
-    border: none;
-    background: var(--primary);
-    color: white;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: 0.3s;
-    align-self: end;
-}
-
-.btnVoirPlus:hover {
-    background: var(--accent);
-}
-
-/* Bouton */
 
 .btnVoirPlus {
     padding: 8px 18px;
     border-radius: 30px;
     border: none;
-    background: white;
-    color: var(--primary);
+    background: var(--accent);
+    color: white;
     cursor: pointer;
     transition: 0.3s;
     font-size: 0.85rem;
     max-width: 100%;
     justify-self: center;
+    transition: all 0.3s ease;
 }
 
 .btnVoirPlus:hover {
-    background: rgb(144, 144, 144);
-    color: rgb(244, 244, 244);
+    background: var(--primary);
+    color: white;
 }
 
-/* Section Plus Infos */
+#PlusInfosContainer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
 
 #PlusInfos {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100000;
     display: none;
     background: white;
     border-radius: 20px;
     padding: 40px;
-    margin-top: 80px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     color: black;
+    max-width: 800px;
+    max-height: 600px;
+    overflow-y: auto;
 }
 
-#PlusInfos.visible {
+#PlusInfos::-webkit-scrollbar {
+    width: 8px;
+}
+
+#PlusInfos::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+#PlusInfos::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#PlusInfos hr {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 20px 0;
+    width: 90%;
+}
+
+#PlusInfosDev {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+#name3D {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: -20px;
+}
+
+#imageZoom {
+    display: none;
+    max-width: 90vw;
+    max-height: 90vh;
+    min-width: 70vw;
+    min-height: 70vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    position: fixed;
+    cursor: zoom-out;
+    z-index: 100001;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px !important;
+    overflow: hidden;
 }
 
 #PlusInfos h2 {
     margin-top: 0;
     color: var(--primary);
+    text-align: center;
 }
 
 #PlusInfos p {
@@ -198,18 +270,17 @@ main {
     width: 100%;
 }
 
-/* Couleur statut tâches */ 
 
-.termine { 
-    color: green; 
-} 
+.termine {
+    color: green;
+}
 
-.enCours { 
-    color: orange; 
-} 
+.enCours {
+    color: orange;
+}
 
-.pasCommence { 
-    color: red; 
+.pasCommence {
+    color: red;
 }
 
 /* Carrousel */
@@ -238,9 +309,12 @@ main {
     min-width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
 }
 
-.prev, .next {
+.prev,
+.next {
     cursor: pointer;
     padding: 10px;
     border-radius: 12px;
@@ -251,11 +325,11 @@ main {
     transition: 0.3s;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
     background: black;
 }
 
-/* Bouton fermer */
 
 #closeButton {
     margin-top: 30px;
@@ -267,47 +341,42 @@ main {
     cursor: pointer;
 }
 
-/* --- RESPONSIVE TABLETTE & MOBILE --- */
 
 @media (max-width: 1024px) {
     main {
         padding: 40px 20px;
     }
 
-    /* On casse le mode horizontal pour passer en vertical */
     #friseChronologique {
         flex-direction: column;
-        align-items: flex-start; /* Aligné à gauche */
-        padding-left: 50px;     /* Espace pour le trait vertical */
+        align-items: flex-start;
+        padding-left: 50px;
         min-width: auto;
     }
 
     .friseItem {
         width: 100%;
-        flex-direction: row;    /* Rectangle à gauche, texte à droite */
+        flex-direction: row;
         align-items: flex-start;
         margin-bottom: 40px;
         gap: 20px;
     }
 
-    /* On transforme le rectangle bleu en petit carré/indicateur */
     .friseBloc {
         width: 60px;
         min-width: 60px;
         height: 60px;
     }
 
-    /* Le trait devient vertical et se place à gauche */
     .trait {
         position: absolute;
-        left: 28px; /* Centré sous le carré de 60px */
+        left: 28px;
         top: 60px;
         height: calc(100% - 20px);
         width: 4px;
         margin-top: 0;
     }
 
-    /* On ajuste le contenu textuel */
     .friseContent {
         text-align: left;
         padding: 0;
@@ -322,22 +391,21 @@ main {
         margin-top: 10px;
     }
 
-    /* Suppression de la flèche finale en mode mobile car elle ne fait plus sens */
     .last-rect::after {
         display: none;
     }
 
-    /* On réduit l'espace autour du carrousel */
     #PlusInfos {
         padding: 20px;
     }
 
     #imagesContainer {
-        grid-template-columns: 45px 1fr 45px; /* Flèches légèrement plus petites */
+        grid-template-columns: 45px 1fr 45px;
         gap: 10px;
     }
 
-    .prev, .next {
+    .prev,
+    .next {
         height: 45px;
         width: 45px;
         display: flex;
@@ -372,9 +440,8 @@ main {
         top: 40px;
     }
 
-    /* Sur petit mobile, on place souvent les flèches SUR l'image ou en dessous */
     #imagesContainer {
-        display: block; /* On casse la grille */
+        display: block;
         position: relative;
     }
 
@@ -382,17 +449,17 @@ main {
         width: 100%;
     }
 
-    /* On positionne les flèches en flottant sur les côtés de l'image */
-    .prev, .next {
+    .prev,
+    .next {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         z-index: 20;
         height: 40px;
         width: 40px;
-        background: rgba(30, 41, 59, 0.7); /* var(--primary) avec transparence */
+        background: rgba(30, 41, 59, 0.7);
         font-size: 20px;
-        border-radius: 50%; /* Boutons ronds sur mobile */
+        border-radius: 50%;
     }
 
     .prev {
@@ -402,9 +469,8 @@ main {
     .next {
         right: 10px;
     }
-    
-    /* On s'assure que les images gardent un bon ratio */
+
     .ImageVoirPlus {
-        aspect-ratio: 4/3; /* Plus haut sur mobile pour mieux voir */
+        aspect-ratio: 4/3;
     }
 }

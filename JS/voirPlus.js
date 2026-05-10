@@ -2,8 +2,11 @@
 loadEvents();
 
 function VoirPlus(button, eventKey, colorBorder) {
+    const plusInfosContainer = document.getElementById("PlusInfosContainer");
     const plusInfos = document.getElementById("PlusInfos");
+
     plusInfos.style.display = "block";
+    plusInfosContainer.style.display = "flex";
 
     // Parent
     const friseItem = button.closest(".friseItem");
@@ -80,25 +83,48 @@ function VoirPlus(button, eventKey, colorBorder) {
     }
 
     // Appliquer la bordure colorée
-    plusInfos.style.border = `2px solid ${colorBorder || 'black'}`;
+    document.getElementById("PlusInfos").style.border = `2px solid ${colorBorder || 'black'}`;
 
     // Réinitialiser le carrousel
     index = 0;
     UpdateCarrousel();
 
     // Afficher le conteneur des infos
-    plusInfos.classList.add("visible");
+    document.getElementById("PlusInfos").classList.add("visible");
+
+    // Fermer au clic en dehors du popup
+    plusInfosContainer.addEventListener("click", function (event) {
+        if (event.target === plusInfosContainer) {
+            closeInfos();
+            closeImageZoom();
+        }
+    });
 
     // Ancre vers caroussel
-    document.getElementById("PlusInfos").scrollIntoView({
+    /*document.getElementById("PlusInfos").scrollIntoView({
         behavior: "smooth"
-    });
+    });*/
 }
 
 function closeInfos() {
+    const plusInfosContainer = document.getElementById("PlusInfosContainer");
     const plusInfos = document.getElementById("PlusInfos");
-    plusInfos.style.display = "none";
+
+    plusInfosContainer.classList.remove("visible");
     plusInfos.classList.remove("visible");
+
+    plusInfos.style.display = "none";
+    plusInfosContainer.style.display = "none";
+
+    // Réinitialiser le carrousel
+    index = 0;
+    UpdateCarrousel();
+
+    // Remonter en haut de la page
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 }
 
 
@@ -106,7 +132,36 @@ function closeInfos() {
 let eventsData = [];
 
 async function loadEvents() {
-    const response = await fetch("./Json/events.json"); 
+    const response = await fetch("./Json/events.json");
     const data = await response.json();
     eventsData = data.events;
+}
+
+
+document.getElementById('carrousel').addEventListener('click', (e) => {
+    if (e.target.tagName === 'IMG') {
+        const imageZoom = document.getElementById('imageZoom');
+        imageZoom.src = e.target.src;
+        imageZoom.style.display = 'flex';
+
+        // Arrière flou pour le reste de la page sauf pour l'image zoomée
+        document.getElementById('PlusInfos').style.filter = 'blur(5px)';
+        document.getElementById('PlusInfos').style.pointerEvents = 'none';
+        document.getElementById('friseContainer').style.filter = 'blur(5px)';
+        document.getElementById('friseContainer').style.pointerEvents = 'none';
+    }
+});
+
+document.getElementById('imageZoom').addEventListener('click', closeImageZoom);
+
+function closeImageZoom() {
+    const imageZoom = document.getElementById('imageZoom');
+    imageZoom.style.display = 'none';
+    imageZoom.src = '';
+
+    // Retirer le flou et réactiver les interactions
+    document.getElementById('PlusInfos').style.filter = 'none';
+    document.getElementById('PlusInfos').style.pointerEvents = 'auto';
+    document.getElementById('friseContainer').style.filter = 'none';
+    document.getElementById('friseContainer').style.pointerEvents = 'auto';
 }

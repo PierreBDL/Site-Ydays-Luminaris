@@ -3,12 +3,16 @@ html, body {
     padding: 0;
     font-family: Arial, sans-serif;
     box-sizing: border-box;
-    background-image: url(../Images/Commun/fond.png) !important;
-    color: white;
+    background-image: url(../Images/080426/image1.png) !important;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black !important;
 }
 
 header, footer {
-    background-color: rgba(244, 244, 244, 0.3) !important;;
+    /*background-color: rgba(255, 255, 255, 0.2);*/
 }
 
 header {
@@ -25,7 +29,7 @@ header nav {
 header nav a {
     margin: 0 15px;
     text-decoration: none;
-    color: white;
+    color: black !important;
     font-weight: bold;
 }
 
@@ -41,7 +45,7 @@ header nav .navInactive p::after {
     bottom: -2px;
     height: 2px;
     width: 0;
-    background-color: white;
+    background-color: black;
     transition: width 0.4s;
 }
 
@@ -54,13 +58,8 @@ header nav .navInactive p.active::after {
 }
 
 .navActive p {
-    border-bottom: 2px solid white;
+    border-bottom: 3px solid black;
 }
-
-
-/* ------------------------------------------------------ */
-
-/* Footer */
 
 footer {
     position: fixed;
@@ -73,5 +72,7 @@ footer {
 
 footer p {
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
 }
