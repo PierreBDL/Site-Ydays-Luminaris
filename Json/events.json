@@ -130,7 +130,8 @@
         { "text": "Fusion du menu et des paramètres avec le projet", "status": "termine" },
         { "text": "Optimisation des mécaniques de jeu", "status": "termine" },
         { "text": "Préfab joueur avec caméra", "status": "termine" },
-        { "text": "Corrections divers bugs", "status": "enCours" }
+        { "text": "Corrections divers bugs", "status": "enCours" },
+        { "text": "Mise à jour du site", "status": "enCours" }
       ],
       "images": [
         "/180326/image1.png",
@@ -147,7 +148,8 @@
         { "text": "Fusion du projet avec les différentes branches de développement", "status": "termine" },
         { "text": "Zone de boss", "status": "termine" },
         { "text": "Corrections de bugs de chargement de zones", "status": "termine" },
-        { "text": "Corrections de bugs", "status": "enCours" }
+        { "text": "Corrections de bugs", "status": "enCours" },
+        { "text": "Mise à jour du site", "status": "enCours" }
       ],
       "description": "Fusion du projet avec les différentes branches de développement, corrections de bugs et optimisations diverses.",
       "images": [
@@ -160,14 +162,15 @@
 
     {
       "id": "event9",
-      "date": "29/05/26",
-      "title": "Séance du 29/05/26 - Musique et son & Animations",
+      "date": "29/04/26",
+      "title": "Séance du 29/04/26 - Musique et son & Animations",
       "tasks": [   
         { "text": "Musique et son menu", "status": "termine" },
         { "text": "Musique et son en jeu", "status": "termine" },
         { "text": "Corrections de bugs", "status": "enCours" },
         { "text": "Animations de base (idle, movement)", "status": "enCours" },
-        { "text": "Animations de mort", "status": "pasCommence" }
+        { "text": "Animations de mort", "status": "pasCommence" },
+        { "text": "Mise à jour du site", "status": "enCours" }
       ],
       "description": "Ajout de musique et de son pour le menu et le jeu, animations de base et de mort, corrections de bugs et optimisations diverses.",
       "images": [
@@ -179,11 +182,22 @@
 
     {
       "id": "event10",
-      "date": "xx/xx/xxxx",
-      "title": "Dixième séance",
-      "tasks": [],
-      "description": "Description de l'événement 10.",
-      "images": []
+      "date": "20/05/26",
+      "title": "Séance du 20/05/26 - Animations",
+      "tasks": [
+        { "text": "Animations de base (idle, movement)", "status": "termine" },
+        { "text": "Animations de mort", "status": "termine" },
+        { "text": "Animations d'attaque", "status": "termine" },
+        { "text": "Corrections de bugs", "status": "enCours" },
+        { "text": "Mise à jour du site", "status": "enCours" }
+      ],
+      "description": "Mise en place des animations et des transitions entres les animations & résolution de bugs",
+      "images": [
+        "/200526/image1.png",
+        "/200526/video2.mp4",
+        "/200526/image3.png",
+        "/200526/image4.png"
+      ]
     },
 
     {

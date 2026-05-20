@@ -1,7 +1,7 @@
 :root {
     --bg: #f4f6f8;
-    --primary: #1e293b;
-    --accent: #3b82f6;
+    --primary: #2F5155;
+    --accent: #2F5155;
     --accent-light: #60a5fa;
     --text: #0f172a;
     --muted: #64748b;
@@ -103,7 +103,7 @@ main {
 .friseBloc {
     width: 100%;
     height: 70px;
-    border: var(--primary) 2px solid;
+    border: black 2px solid;
     border-radius: 10px;
 }
 
@@ -157,6 +157,7 @@ main {
     max-width: 100%;
     justify-self: center;
     transition: all 0.3s ease;
+    border: black 1px solid;
 }
 
 .btnVoirPlus:hover {
@@ -194,7 +195,7 @@ main {
     padding: 40px;
     color: black;
     max-width: 800px;
-    max-height: 600px;
+    max-height: 80vh;
     overflow-y: auto;
 }
 
@@ -249,6 +250,7 @@ main {
     transform: translate(-50%, -50%);
     border-radius: 20px !important;
     overflow: hidden;
+    background-color: white !important;
 }
 
 #PlusInfos h2 {
@@ -347,6 +349,11 @@ main {
         padding: 40px 20px;
     }
 
+    #title {
+        font-size: 2rem;
+        padding: 0 20px;
+    }
+
     #friseChronologique {
         flex-direction: column;
         align-items: flex-start;
@@ -397,6 +404,13 @@ main {
 
     #PlusInfos {
         padding: 20px;
+        max-width: 90%;
+        max-height: 80vh;
+        height: auto;
+    }
+
+    #PlusInfos h2 {
+        font-size: 1.5rem;
     }
 
     #imagesContainer {
@@ -414,19 +428,124 @@ main {
         font-size: 24px;
         padding: 0;
     }
+
+    #imageZoom {
+        max-width: 85vw;
+        max-height: 85vh;
+        min-width: 60vw;
+        min-height: 60vh;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 30px 15px;
+    }
+
+    #title {
+        font-size: 1.8rem;
+        padding: 0 15px;
+    }
+
+    #friseContainer {
+        padding-bottom: 12px;
+    }
+
+    #friseChronologique {
+        padding: 0 30px;
+        gap: 0;
+    }
+
+    .friseItem {
+        width: 100%;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .friseBloc {
+        width: 50px;
+        min-width: 50px;
+        height: 50px;
+    }
+
+    .trait {
+        left: 23px;
+        top: 50px;
+    }
+
+    .friseContent h3 {
+        font-size: 1.1rem;
+    }
+
+    .friseContent p {
+        font-size: 0.9rem;
+    }
+
+    .btnVoirPlus {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    #PlusInfos {
+        max-width: 85% !important;
+        max-height: 85vh;
+        padding: 15px;
+    }
+
+    #PlusInfos h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    #PlusInfos p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    #imagesContainer {
+        grid-template-columns: 35px 1fr 35px;
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .prev,
+    .next {
+        height: 35px;
+        width: 35px;
+        font-size: 20px;
+    }
+
+    #imageZoom {
+        max-width: 90vw;
+        max-height: 90vh;
+        min-width: 50vw;
+        min-height: 50vh;
+    }
+
+    .ImageVoirPlus {
+        aspect-ratio: 4/3;
+    }
 }
 
 @media (max-width: 600px) {
+    main {
+        padding: 20px 10px;
+    }
+
     #title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        padding: 0 10px;
+        margin-bottom: 30px;
     }
 
     #friseChronologique {
         padding-left: 30px;
+        gap: 0;
     }
 
     .friseItem {
         gap: 15px;
+        margin-bottom: 25px;
     }
 
     .friseBloc {
@@ -440,13 +559,28 @@ main {
         top: 40px;
     }
 
+    .friseContent h3 {
+        font-size: 1rem;
+    }
+
+    .friseContent p {
+        font-size: 0.85rem;
+    }
+
+    .btnVoirPlus {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
     #imagesContainer {
         display: block;
         position: relative;
+        margin-top: 15px;
     }
 
     #carrouselViewport {
         width: 100%;
+        border-radius: 12px;
     }
 
     .prev,
@@ -455,22 +589,84 @@ main {
         top: 50%;
         transform: translateY(-50%);
         z-index: 20;
-        height: 40px;
-        width: 40px;
-        background: rgba(30, 41, 59, 0.7);
-        font-size: 20px;
+        height: 36px;
+        width: 36px;
+        background: rgba(30, 41, 59, 0.8);
+        font-size: 18px;
         border-radius: 50%;
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .prev {
-        left: 10px;
+        left: 5px;
     }
 
     .next {
-        right: 10px;
+        right: 5px;
+    }
+
+    .prev:hover,
+    .next:hover {
+        background: rgba(30, 41, 59, 0.95);
+    }
+
+    #PlusInfosContainer {
+        padding: 10px;
+    }
+
+    #PlusInfos {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 15px;
+        max-width: 95vw;
+        max-height: 90vh;
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    #PlusInfos h2 {
+        font-size: 1.2rem;
+        margin: 0 0 15px 0;
+    }
+
+    #PlusInfos p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    #descriptionContainer {
+        text-align: left;
+    }
+
+    #name3D {
+        margin-bottom: -10px;
+    }
+
+    #PlusInfosDev {
+        gap: 15px;
+    }
+
+    #imageZoom {
+        max-width: 95vw;
+        max-height: 95vh;
+        min-width: 80vw;
+        min-height: 80vh;
     }
 
     .ImageVoirPlus {
-        aspect-ratio: 4/3;
+        aspect-ratio: 3/2;
+    }
+
+    #closeButton {
+        margin-top: 20px;
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
 }
