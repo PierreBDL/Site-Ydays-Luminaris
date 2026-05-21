@@ -208,7 +208,8 @@
         { "text": "Diaporama", "status": "termine" },
         { "text": "Mise à jour du site", "status": "termine" },
         { "text": "Corrections de bugs", "status": "enCours" },
-        { "text": "Présentation du projet au jury", "status": "enCours" }
+        { "text": "Présentation du projet au jury", "status": "enCours" },
+        { "text": "Animations des ennemis", "status": "enCours" }
       ],
       "description": "Dernièce séance de la premère année du projet & présentation du projet au jury",
       "images": [
