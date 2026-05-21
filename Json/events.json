@@ -169,8 +169,8 @@
         { "text": "Musique et son en jeu", "status": "termine" },
         { "text": "Corrections de bugs", "status": "enCours" },
         { "text": "Animations de base (idle, movement)", "status": "enCours" },
-        { "text": "Animations de mort", "status": "pasCommence" },
-        { "text": "Mise à jour du site", "status": "enCours" }
+        { "text": "Mise à jour du site", "status": "enCours" },
+        { "text": "Animations de mort", "status": "pasCommence" }
       ],
       "description": "Ajout de musique et de son pour le menu et le jeu, animations de base et de mort, corrections de bugs et optimisations diverses.",
       "images": [

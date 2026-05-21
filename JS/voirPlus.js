@@ -47,6 +47,14 @@ function VoirPlus(button, eventKey, colorBorder) {
         p.style.display = "none";
     }
 
+    // Supprimer les images existantes
+    const oldVideos = imagesContainer.querySelectorAll("video");
+    oldVideos.forEach(oldVideo => {
+        oldVideo.pause();
+        oldVideo.removeAttribute('src');
+        oldVideo.load();
+    });
+
     // Ajout des images
     const imagesContainer = document.getElementById("carrousel");
     imagesContainer.innerHTML = ""; // Clear
@@ -77,6 +85,7 @@ function VoirPlus(button, eventKey, colorBorder) {
                 video.style.margin = "auto";
                 video.style.objectFit = "contain";
                 video.classList.add("ImageVoirPlus");
+                video.preload = "auto";
                 imagesContainer.appendChild(video);
             }
         });
@@ -122,6 +131,14 @@ function closeInfos() {
 
     plusInfos.style.display = "none";
     plusInfosContainer.style.display = "none";
+
+    // Supprime les vidéos
+    const oldVideos = imagesContainer.querySelectorAll("video");
+    oldVideos.forEach(oldVideo => {
+        oldVideo.pause();
+        oldVideo.removeAttribute('src');
+        oldVideo.load();
+    });
 
     // Réinitialiser le carrousel
     index = 0;
