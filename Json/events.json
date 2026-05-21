@@ -202,11 +202,21 @@
 
     {
       "id": "event11",
-      "date": "xx/xx/xxxx",
-      "title": "Onzième séance",
-      "tasks": [],
-      "description": "Description de l'événement 11.",
-      "images": []
+      "date": "21/05/26",
+      "title": "Séance du 21/05/26 - Dernière séance & diaporama",
+      "tasks": [
+        { "text": "Diaporama", "status": "termine" },
+        { "text": "Mise à jour du site", "status": "termine" },
+        { "text": "Corrections de bugs", "status": "enCours" },
+        { "text": "Présentation du projet au jury", "status": "enCours" }
+      ],
+      "description": "Dernièce séance de la premère année du projet & présentation du projet au jury",
+      "images": [
+        "/210526/image1.png",
+        "/210526/image2.png",
+        "/210526/image3.png",
+        "/210526/image4.png"
+      ]
     }
   ]
 }

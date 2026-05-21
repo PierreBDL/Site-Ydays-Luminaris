@@ -100,6 +100,13 @@ function VoirPlus(button, eventKey, colorBorder) {
         }
     });
 
+    // Si event 11 -> enlever le "3d"
+    if (event.id === "event11") {
+        document.getElementById("name3D").innerHTML = "";
+    } else {
+        document.getElementById("name3D").innerHTML = "<strong>3Ds :</strong><br>";
+    }
+
     // Ancre vers caroussel
     /*document.getElementById("PlusInfos").scrollIntoView({
         behavior: "smooth"
